@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require("path");
 
 /**
  * Use this file to configure your truffle project. It's seeded with some
@@ -30,7 +31,7 @@ const KOVAN_URL = process.env.KOVAN_URL;
 
 module.exports = {
   contracts_directory: './contracts',
-  contracts_build_directory: './build/contracts',
+  contracts_build_directory: path.join(__dirname, "app/src/contracts"),
   migrations_directory: './migrations',
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
